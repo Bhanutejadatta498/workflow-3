@@ -1,0 +1,179 @@
+{
+  "name": "My Team Lead",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "My app",
+        "formDescription": "Ask your Question",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Your question regarding our app",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        0,
+        0
+      ],
+      "id": "075509f5-f7a9-4d3d-8e58-2af860a4049b",
+      "name": "On form submission",
+      "webhookId": "09c57f65-ae65-4c00-a6ff-ea8280c164db"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['Your question regarding our app'] }}",
+        "options": {
+          "systemMessage": "You are a helpful assistant based on the question answer the user in a polite and friendly way, here is the context of the project   Our project is designed to solve a specific business problem by providing a centralized and efficient way to manage the complete process from [input/request] to [final outcome].\nAt a high level, the system:\n- Collects and validates required information.\n- Processes the data/business request according to defined business rules.\n- Integrates with relevant internal/external systems.\n- Provides users with the required output, status, or decision.\n- Maintains tracking, auditability, and reporting.\n- Reduces manual effort and improves process accuracy.\nThe key idea is that instead of users relying on multiple disconnected systems or manual activities, the project provides one streamlined workflow.\n2. What is the main purpose?\nThe primary purpose of the project is to improve the efficiency, accuracy, scalability, and visibility of the business process.\nFrom a business perspective, we are trying to achieve four major things:\nReduce manual work\nAutomate repetitive activities so users can focus on higher-value work.\nImprove accuracy\nApply consistent business rules and validations rather than relying heavily on manual decisions.\nImprove visibility\nAllow stakeholders to understand what is happening, where a request currently stands, and whether there are any issues.\nMake the process scalable\nThe solution should be able to handle increasing transaction volumes without requiring a proportional increase in operational effort.\n3. Who are the users/stakeholders?\nThe project typically has several stakeholders:\n- Business users – use the application/process to perform their day-to-day activities.\n- Operations team – monitor and manage transactions/processes.\n- Management – consume reports, KPIs, and operational insights.\n- Technology teams – develop, maintain, and support the platform.\n- External systems/partners – exchange data through integrations where required.\nAs the project owner, my responsibility is to make sure these different stakeholders are aligned around the business outcome, not just individual technical requirements.\n4. How does the project work?\nAt a high level, the workflow looks like this:\nUser/System Input → Validation → Business Processing → Integration → Output/Decision → Tracking & Reporting\nFor example:\n1. A request or transaction enters the system.\n2. The system validates the required information.\n3. Business rules are applied.\n4. Required downstream systems are called.\n5. The response is processed.\n6. The user receives the appropriate result/status.\n7. The transaction is logged for audit and reporting.\n8. Exceptions are routed for further action.\nThis gives us an end-to-end process rather than solving only one individual step.\n5. What is the current scope?\nThe current scope focuses on the core business workflow.\nThe main capabilities include:\n- Core transaction/request processing\n- Business-rule validation\n- User/workflow management\n- System integrations\n- Status tracking\n- Exception handling\n- Audit logging\n- Reporting/monitoring\n- Security and access control\nThe objective at this stage is to establish a stable and reliable core platform before expanding into more advanced capabilities.\n6. What is the future scope?\nThis is where you should demonstrate that you are thinking beyond the current release.\nThe future roadmap can evolve in several directions.\nAutomation\nWe can automate more manual and exception-based activities.\nFor example:\nToday, certain exceptions require manual review. In the future, we can introduce rule-based or intelligent processing to automatically resolve common scenarios.\n\nAnalytics\nThe next step is to move from simply processing transactions to understanding them.\nWe can introduce:\n- Advanced dashboards\n- Trend analysis\n- Operational KPIs\n- Predictive analytics\n- Bottleneck identification\n- Business intelligence\nAI / Intelligent Processing\nDepending on the business case, AI can help with:\n- Classification\n- Document/data extraction\n- Anomaly detection\n- Recommendations\n- Forecasting\n- Intelligent exception handling\nThe important point is AI should solve a measurable business problem, not be added just because it is fashionable.\nIncreased integrations\nThe platform can integrate with additional internal and external systems to create a more connected ecosystem and reduce duplicate data entry.\nScalability\nAs adoption increases, the architecture can evolve to support:\n- Higher transaction volumes\n- More users\n- Additional business units\n- New geographic regions\n- New products/processes\nSelf-service\nWe can gradually move more activities from operations teams to business users through self-service capabilities, reducing dependency on support teams.\n7. What does success look like?\nAs a project owner, I wouldn't measure success by saying:\n\"We delivered all the features.\"\n\nThat's delivery-focused, not outcome-focused.\nI'd define success through measurable KPIs such as:\nArea\tKPI\nEfficiency\tReduction in processing time\nAutomation\t% of processes automated\nAccuracy\tReduction in errors\nOperations\tReduction in manual intervention\nAdoption\tActive users / adoption rate\nPerformance\tResponse/processing time\nReliability\tSystem availability\nBusiness\tCost savings / productivity improvement\nCustomer\tImprovement in customer experience\n\n\nThe ultimate goal is business impact, not simply software delivery.\n8. Project Owner's overall vision\nIf I had to summarize the project as the owner in one statement, I would say:\n\"The vision of the project is to transform a traditionally manual or fragmented business process into a centralized, automated, scalable, and data-driven platform. The current focus is on establishing a reliable core workflow, while the long-term vision is to expand automation, analytics, integrations, and intelligent decision-making to deliver greater operational efficiency and business value.\"\n\nThat's the kind of answer that makes you sound like someone who owns the product, rather than someone who only knows their assigned module."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "b8ecad2e-8ffb-45f6-ad2b-27fb3c1b89c9",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        96,
+        208
+      ],
+      "id": "1249f507-3f9f-40b0-baee-7b8510b23a32",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "ICDcMe7j8GHVWdwi",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['Your question regarding our app'] }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        240,
+        208
+      ],
+      "id": "a0a27209-97e7-4552-b0a2-a98d345ef273",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json.Email }}",
+        "subject": "Answer to your question",
+        "message": "=<h1>Answer to your question</h1><p> {{ $json.output }}</p>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        592,
+        0
+      ],
+      "id": "015755b5-ac15-4bf1-b7f9-b63674982719",
+      "name": "Send a message",
+      "webhookId": "40c5d744-5e4c-45a6-a568-f043d7da4abf",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Zll2N7nzHqSwul01",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "On form submission": [
+      {
+        "json": {
+          "Your question regarding our app": "What is the main purpose of your application ",
+          "Email": "bhanutejadatta@gmail.com",
+          "submittedAt": "2026-10-05T15:22:08.129+05:30",
+          "formMode": "test"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "667a0bfe-5eb7-4c47-9586-a64ffd2daa7d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5ee049af122a9ab2cc9b732478b887bc4121fa527c26fe7b05f42d7410203202"
+  },
+  "nodeGroups": [],
+  "id": "ZRiqaVCdaG6GH1hJ",
+  "tags": []
+}
