@@ -84,10 +84,7 @@ The email body is plain HTML in the Gmail node. Update the subject and message t
 
 This repo contains no API keys or credentials. You must add your own after importing. Never commit API keys, tokens, or personal email addresses to a public repo.
 
-## 📝 Related
 
-- LinkedIn post: _add link here_
-- Other workflows: _add links to your other repos here_
 
 ## 📄 License
 
